@@ -1,44 +1,33 @@
+import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Test1 {
 
-    private static final int N = 10;
-    private static final int m = 10;
-
-    public static void main(String[] args) {
-        int[][] a = new int[N][m];
-        System.out.println("随机生成：");
-
-        for (int i = 0; i< N; i++){
-            for (int j=0;j<m;j++){
-                if(i==0&&j==0){
-                    a[i][j] = 0;
-                }else{
-                    a[i][j] = (int)(Math.random()*100);
-                }
-                System.out.print(String.format("%6d",a[i][j]));
-            }
-            System.out.println();
+    public static void main(String[] args) throws Exception {
+        Map<String,String> map = new HashMap<>();
+        map.put("11","11");
+        map.put("22","22");
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            entry.setValue("33");
         }
 
-        for (int i = 0; i< N; i++){
-            for (int j=0;j<m;j++){
-                if(i==0&&j==0){
-
-                }else if(i==0){
-                    a[i][j] = a[i][j-1] + a[i][j];
-                }else if(j==0){
-                    a[i][j] = a[i-1][j] + a[i][j];
-                }else{
-                    a[i][j] = Math.min(a[i-1][j],a[i][j-1]) + a[i][j];
-                }
-            }
-        }
-
-        System.out.println("输出结果：");
-        for (int i = 0; i< N; i++){
-            for (int j=0;j<m;j++){
-                System.out.print(String.format("%6d",a[i][j]));
-            }
-            System.out.println();
-        }
+        System.out.println(map.get("11"));
     }
+
+
+    class Modal1{
+        private boolean isXXX;
+
+    }
+
 }
